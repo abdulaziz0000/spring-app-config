@@ -1,13 +1,10 @@
 eureka:
   instance:
     prefer-ip-address: true
+
   client:
     fetch-registry: true
     register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 
-okta:
-  oauth2:
-    issuer: https://dev-qay051qmy67wl8zj.us.auth0.com/
-    audience: "http://random/api"
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://host.docker.internal:8761/eureka/}
